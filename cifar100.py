@@ -13,7 +13,7 @@ print(train_data.keys())
 
 
 meta_file = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\meta'
-meta_data = unpickle(meta_file)
+meta_data = unpickle(meta_file )
 
 # take the images data from training data
 images = train_data[b'data']
