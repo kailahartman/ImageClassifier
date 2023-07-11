@@ -15,7 +15,7 @@ def save_image_local(images, output_dir, image_format):
         image = np.transpose(image, (1, 2, 0))
 
         label = labels[j]
-        image_name = 'image_{}_label_{}.{}'.format(j + 1, label, image_format)
+        image_name = r'image_{}_label_{}.{}'.format(j + 1, label, image_format)
         output_path = output_dir + '\\' + image_name
 
         plt.imshow(image)
