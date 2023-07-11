@@ -7,7 +7,7 @@ def unpickle(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-path = r'C:\bootCamp\APPLIED\cifar-10-batches-py\\data_batch_1'
+path = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-10-batches-py\\data_batch_1'
 data_dict = unpickle(path)
 
 
@@ -31,4 +31,3 @@ for i in range(10):
 
 plt.tight_layout()
 plt.show()
-
