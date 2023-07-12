@@ -2,17 +2,21 @@
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
-#hi
+from dotenv import dotenv_values
+env_vars = dotenv_values('.env')
+file_path = env_vars['FILE_PATH']
+
+
 def unpickle(file):
     with open(file, 'rb') as fo:
         dict = pickle.load(fo, encoding='bytes')
     return dict
-file = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\train'
+file = file_path+r'\cifar-100-python\train'
 train_data = unpickle(file)
 print(train_data.keys())
 
 
-meta_file = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\meta'
+meta_file = file_path+r'\cifar-100-python\meta'
 meta_data = unpickle(meta_file)
 
 # take the images data from training data
