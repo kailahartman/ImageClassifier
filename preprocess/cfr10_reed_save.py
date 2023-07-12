@@ -24,7 +24,7 @@ def save_image_local(images, output_dir, image_format):
         plt.close()
 
 path = r'C:\bootCamp\APPLIED\cifar-10-batches-py\\data_batch_'
-for i in range(1, 6):
+for i in range(3, 6):
     data_dict = reed_data(path + str(i))
     data = data_dict[b'data']
     labels = data_dict[b'labels']
