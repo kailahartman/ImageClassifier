@@ -1,7 +1,7 @@
 import csv
 import os
 import pickle
-
+local_path = r'C:\bootCamp\APPLIED'
 def save_cifar10_to_csv(label_dir, image_dir, output_file):
     with open(label_dir, 'rb') as fo:
         data_dict = pickle.load(fo, encoding='bytes')
@@ -20,10 +20,10 @@ def save_cifar10_to_csv(label_dir, image_dir, output_file):
         writer.writerows(zip(labels, paths))  # Write the data rows
 
 
-output_dir = r'C:\bootCamp\APPLIED'
+output_dir =os.getcwd()
 for i in range(1, 6):
-    label_dir = r'C:\bootCamp\APPLIED\cifar-10-batches-py\data_batch_'+str(i)
-    image_dir = r'C:\bootCamp\APPLIED\output_images_'+str(i)
-    output_file = os.path.join(output_dir, f'cifar10_data_batch_{i}.csv')
+    label_dir = os.getcwd()+r'\\data\\cifar-10-batches-py\data_batch_'+str(i)
+    image_dir = os.getcwd()+r'\\data\\output_images_'+str(i)
+    output_file = os.path.join(output_dir, f'data\cifar10_data_batch_{i}.csv')
 
     save_cifar10_to_csv(label_dir, image_dir, output_file)
