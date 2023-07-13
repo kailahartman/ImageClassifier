@@ -7,9 +7,7 @@ def reed_data(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-def save_image_local(images, output_dir, image_format):
-    fig, axes = plt.subplots(2, 5, figsize=(12, 6))
-    axes = axes.ravel()
+def save_image_local(images, output_dir, image_format, labels):
     for j in range(len(images)):
         image = images[j]
         image = np.transpose(image, (1, 2, 0))
@@ -31,7 +29,7 @@ for i in range(1, 6):
     images = np.reshape(data, (len(data), 3, 32, 32))
     output_dir = os.getcwd()+r'\\data\\output_images_' + str(i) #your path
     image_format = 'png'
-    save_image_local(images, output_dir, image_format)
+    save_image_local(images, output_dir, image_format, labels)
 
 
 
