@@ -1,19 +1,34 @@
 import csv
 import os
 import pickle
-local_path = r'C:\bootCamp\APPLIED'
-def save_cifar10_to_csv(label_dir, image_dir, output_file):
-    with open(label_dir, 'rb') as fo:
-        data_dict = pickle.load(fo, encoding='bytes')
+import re
 
-    labels = data_dict[b'labels']
+local_path = r'C:\bootCamp\APPLIED'
+
+def extract_label(string):
+    pattern = r'label_(\d+).'
+    match = re.search(pattern, string)
+    if match:
+        return int(match.group(1))
+    else:
+        return None
+
+def save_cifar10_to_csv(image_dir, output_file):
+    labels = []
     paths = []
 
     for file_name in os.listdir(image_dir):
         file_path = os.path.join(image_dir, file_name)
-        print("file_path", file_path)
         if os.path.isfile(file_path):
             paths.append(file_path)
+            label = extract_label(file_path)
+            if label != None:
+                labels.append(label)
+            else:
+                print("err", file_path)
+
+    print("label: ", len(labels))
+    print("path image: ", len(paths))
 
     with open(output_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -22,8 +37,7 @@ def save_cifar10_to_csv(label_dir, image_dir, output_file):
 
 output_dir =os.getcwd()
 for i in range(1, 6):
-    label_dir = os.getcwd()+r'\\data\\cifar-10-batches-py\data_batch_'+str(i)
     image_dir = os.getcwd()+r'\\data\\output_images_'+str(i)
     output_file = os.path.join(output_dir, f'data\cifar10_data_batch_{i}.csv')
 
-    save_cifar10_to_csv(label_dir, image_dir, output_file)
+    save_cifar10_to_csv( image_dir, output_file)
