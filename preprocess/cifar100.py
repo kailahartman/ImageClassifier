@@ -45,7 +45,7 @@ def save_image_local(images, output_dir, image_format):
         plt.close()
 
 
-file = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\train'
+file = os.getcwd()+r'\\data\\cifar-100-python\train'
 train_data = readCifar(file)
 # fileMeta = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\meta'
 # meta = unpickle(fileMeta)
@@ -68,16 +68,16 @@ for i in new_dict.keys():
     data = new_dict[i]
     labels = i
     images = np.reshape(data, (len(data), 3, 32, 32))
-    output_dir = r'C:\Users\אתי\Documents\BOOTCAMP\Project\cifar100_class_' + str(i)
+    output_dir = os.getcwd()+r'\\data\\cifar100_class_' + str(i)
     image_format = 'png'
     save_image_local(images, output_dir, image_format)
 
 
-output_dir = r'C:\Users\אתי\Documents\BOOTCAMP\Project'
+output_dir = os.getcwd()+r'\\data'
 for i in new_dict.keys():
     d={1:9,2:10,17:11}
     label= d[i]
-    image_dir = r'C:\Users\אתי\Documents\BOOTCAMP\Project\cifar100_class_'+str(i)
+    image_dir = os.getcwd()+r'\\data\\cifar100_class_'+str(i)
     output_file = os.path.join(output_dir, f'cifar100_class_{i}.csv')
 
     save_cifar100_to_csv(label, image_dir, output_file)
