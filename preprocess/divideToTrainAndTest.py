@@ -1,8 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-
+path_to_data="data.csv"
 # Load the CSV file
-df = pd.read_csv("data.csv")
+df = pd.read_csv(path_to_data)
 
 # Split the data into train and test sets
 # x=df.loc[:,['Industry_code_ANZSIC06','Industry_aggregation_NZSIOC','Year']]
