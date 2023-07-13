@@ -24,8 +24,8 @@ def save_cifar100_to_csv(label, image_dir, output_file):
 
     with open(output_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(['label', 'path'])  # Write the header
-        writer.writerows(zip(labels, paths))  # Write the data rows
+        writer.writerow(['label', 'path','source'])  # Write the header
+        writer.writerows(zip(labels, paths,['cifar100']*len(labels)))  # Write the data rows
 
 
 
@@ -47,13 +47,6 @@ def save_image_local(images, output_dir, image_format):
 
 file = os.getcwd()+r'\\data\\cifar-100-python\train'
 train_data = readCifar(file)
-# fileMeta = r'C:\Users\אתי\Documents\BOOTCAMP\cifar-100-python\meta'
-# meta = unpickle(fileMeta)
-
-# for i in range(len(train_data[b'coarse_labels'])):
-#     print(meta[b'coarse_label_names'][train_data[b'coarse_labels'][i]])
-#     print(train_data[b'coarse_labels'][i])
-#     print("--------------------------------------------------")
 
 
 
