@@ -87,7 +87,6 @@ def save_cifar100_to_csv(label, image_dir, output_file):
 
 
 
-
 def cifar100_f():
     cifr100_file_path=r'\data\cifar_100\cifar-100-python'
     output_file_dir=r'\data\cifar_100'
