@@ -1,9 +1,6 @@
 import csv
 import os
-import pickle
 import re
-
-local_path = r'C:\bootCamp\APPLIED'
 
 def extract_label(string):
     pattern = r'label_(\d+).'
@@ -34,10 +31,10 @@ def save_cifar10_to_csv(image_dir, output_file):
         writer = csv.writer(csvfile)
         writer.writerows(zip(labels, paths))  # Write the data rows
 
+def cifr10_creat_csv_label_path_f(image_dir_path, output_file_path):
+    output_dir =os.getcwd()
+    for i in range(1, 6):
+        image_dir = os.getcwd()+image_dir_path+str(i)
+        output_file = os.path.join(output_dir, output_file_path+str(i)+'.csv')
 
-output_dir =os.getcwd()
-for i in range(1, 6):
-    image_dir = os.getcwd()+r'\\data\\output_images_'+str(i)
-    output_file = os.path.join(output_dir, f'data\cifar10_data_batch_{i}.csv')
-
-    save_cifar10_to_csv( image_dir, output_file)
+        save_cifar10_to_csv(image_dir, output_file)
