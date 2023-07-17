@@ -1,33 +1,27 @@
 import pickle
 import numpy as np
 import os
-import matplotlib.image
-def reed_data(file):
-    with open(file, 'rb') as fo:
-        dict = pickle.load(fo, encoding='bytes')
-    return dict
 
-def save_image_local(images, output_dir, image_format, labels):
-    for j in range(len(images)):
-        image = images[j]
-        image = np.transpose(image, (1, 2, 0))
+def save_cifar10_as_numpy_dict(data_dir, output_file):
+    train_data, train_labels = [], []
+    for i in range(1, 6):
+        file_path = os.path.join(data_dir, f'data_batch_{i}')
+        with open(file_path, 'rb') as f:
+            data = pickle.load(f, encoding='bytes')
+            train_data.append(data[b'data'])
+            train_labels.extend(data[b'labels'])
 
-        label = labels[j]
-        image_name = r'image_{}_label_{}.{}'.format(j + 1, label, image_format)
-        output_path = output_dir + '\\' + image_name
-        matplotlib.image.imsave(output_path, image)
+    train_data = np.vstack(train_data)
+    train_labels = np.array(train_labels)
+    cifar_dict = {'images': train_data, 'labels': train_labels}
 
-path = os.getcwd()+r'\\data\\cifar-10-batches-py\\data_batch_'  #your path
-for i in range(1, 6):
-    data_dict = reed_data(path + str(i))
-    data = data_dict[b'data']
-    labels = data_dict[b'labels']
-    images = np.reshape(data, (len(data), 3, 32, 32))
-    np.save('data/cifar10',images)
+    np.savez(output_file, **cifar_dict)
 
-    output_dir = os.getcwd()+r'\\data\\output_images_' + str(i) #your path
-    image_format = 'png'
-    save_image_local(images, output_dir, image_format, labels)
+
+path = os.getcwd()+r'\\data\\cifr10\\cifar-10-batches-py'  #your path
+output_file = os.getcwd() + r'\\data\\cifr10\\'
+save_cifar10_as_numpy_dict(path, output_file)
+
 
 
 
