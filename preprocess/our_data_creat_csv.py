@@ -2,7 +2,7 @@ import csv
 import os
 
 
-def save_our_data_to_csv  (image_dir, output_file):
+def save_our_data_to_csv(image_dir, output_file):
     labels = []
     paths = []
     for i in range(0,10):
