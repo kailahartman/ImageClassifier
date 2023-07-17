@@ -1,8 +1,6 @@
 import pickle
 import numpy as np
-import matplotlib.pyplot as plt
 import os
-import cv2
 import matplotlib.image
 def reed_data(file):
     with open(file, 'rb') as fo:
@@ -30,7 +28,6 @@ for i in range(1, 6):
     output_dir = os.getcwd()+r'\\data\\output_images_' + str(i) #your path
     image_format = 'png'
     save_image_local(images, output_dir, image_format, labels)
-
 
 
 
