@@ -95,6 +95,7 @@ def cifar100_f():
 
 
 
+
     # file_path = r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100\cifar-100-python\train'
     # train_data = read_cifar_100(file_path)
     # file_path1=r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100\cifar-100-python\meta'
