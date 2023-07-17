@@ -36,10 +36,16 @@ def save_cifar10_to_csv(image_dir, output_file):
         # Write the data rows
         writer.writerows(zip(labels, paths, ['cifar10'] * len(labels)))
 
+def cifr10_creat_csv_label_path_f(image_dir_path, output_file_path):
+    output_dir =os.getcwd()
+    for i in range(1, 6):
+        image_dir = os.getcwd()+image_dir_path+str(i)
+        output_file = os.path.join(output_dir, output_file_path+str(i)+'.csv')
 
-output_dir = os.getcwd()
-for i in range(1, 6):
-    image_dir = os.path.join(os.getcwd(), f'data\\output_images_{i}')
-    output_file = os.path.join(output_dir, f'data\\cifar10_data_batch_{i}.csv')
+# output_dir = os.getcwd()
+# for i in range(1, 6):
+#     image_dir = os.path.join(os.getcwd(), f'data\\output_images_{i}')
+#     output_file = os.path.join(output_dir, f'data\\cifar10_data_batch_{i}.csv')
 
     save_cifar10_to_csv(image_dir, output_file)
+
