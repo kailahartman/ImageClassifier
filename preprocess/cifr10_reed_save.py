@@ -2,6 +2,8 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import cv2
+import matplotlib.image
 def reed_data(file):
     with open(file, 'rb') as fo:
         dict = pickle.load(fo, encoding='bytes')
@@ -12,10 +14,9 @@ def save_image_local(images, output_dir, image_format, labels):
         label = labels[j]
         image_name = r'image_{}_label_{}.{}'.format(j + 1, label, image_format)
         output_path = output_dir + '\\' + image_name
+        matplotlib.image.imsave(output_path, image)
 
-        plt.axis('off')
-        plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
-        plt.close()
+
 
 def cifr10_reed_save_f(output_dir_path, cifr_path):
     path = os.getcwd()+cifr_path  #your path
