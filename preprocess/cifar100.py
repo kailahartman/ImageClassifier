@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import csv
 import os
 import pickle
+import matplotlib.image
 
 
 def readCifar(file):
@@ -38,11 +39,7 @@ def save_image_local(images, output_dir, image_format):
 
         image_name = r'image_{}_.{}'.format(j + 1, image_format)
         output_path = output_dir + '\\' + image_name
-
-        plt.imshow(image)
-        plt.axis('off')
-        plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
-        plt.close()
+        matplotlib.image.imsave(output_path, image)
 
 
 file = os.getcwd()+r'\\data\\cifar-100-python\train'
