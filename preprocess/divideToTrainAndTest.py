@@ -1,16 +1,16 @@
 import pandas as pd
+import os
 from sklearn.model_selection import train_test_split
-path_to_data="data.csv"
-# Load the CSV file
+path_to_data = os.getcwd()+r'\\data\\combined_data.csv'
+
 df = pd.read_csv(path_to_data)
 
-# Split the data into train and test sets
-# x=df.loc[:,['Industry_code_ANZSIC06','Industry_aggregation_NZSIOC','Year']]
-# y=df.loc[:,['Value']]
-X_train, X_test, y_train, y_test = train_test_split(x,y, test_size=0.2)
+X = df.loc[:, ['path', 'source']]
+y = df.loc[:, ['label']]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Save the train and test sets
-X_train.to_csv("CFARTrainData.csv")
-X_test.to_csv("CFARTestData.csv")
-y_test.to_csv("CFARTestDataY.csv")
-y_train.to_csv("CFARTrainDataY.csv")
+X_train.to_csv(os.getcwd()+r'\\data\\CFARTrainDataX.csv')
+X_test.to_csv(os.getcwd()+r'\\data\\CFARTestDataX.csv')
+y_train.to_csv(os.getcwd()+r'\\data\\CFARTrainDataY.csv')
+y_test.to_csv(os.getcwd()+r'\\data\\CFARTestDataY.csv')
