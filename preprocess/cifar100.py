@@ -12,7 +12,8 @@ def read_cifar_100(file_path):
 
 
 def save_cifar100in_dict(cifr100_file_path,kind):
-    file_path = os.getcwd() +cifr100_file_path+kind
+    kind=os.path.join(cifr100_file_path,kind)
+    file_path = os.getcwd() +kind
     print(file_path)
     data = read_cifar_100(file_path)
 
@@ -31,35 +32,34 @@ def save_the_pictures(cifar100Dict,output_dir_path,kind):
     for i in cifar100Dict.keys():
         data = cifar100Dict[i]
         images = np.reshape(data, (len(data), 3, 32, 32))
-        output_dir = os.getcwd()+'\\' +output_dir_path+"_"+kind
+        output_dir = os.getcwd()+'\\' +output_dir_path
         image_format = 'png'
-        print("i", i)
         if i==17:
             label = 12
         if(i==1):
             label = 10
         if(i==2):
             label = 11
-        save_image_local(images, output_dir, image_format, label)
+        save_image_local(images, output_dir, image_format, label,kind)
 
 def save_image_local(images, output_dir, image_format, label,kind):
     for j in range(len(images)):
         image = images[j]
         image = np.transpose(image, (1, 2, 0))
-
-        image_name =  r'_{}_label_{}.{}'.format(j + 1, label, image_format)
-        output_path = output_dir + image_name
+        image_name =  r'{}_{}_label_{}.{}'.format(j + 1,kind, label, image_format)
+        print(output_dir)
 
         # plt.imshow(image)
         plt.axis('off')
-        print(output_path)
-        tmp = r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100\cifar100_'+kind+'_images_2\image'+image_name
-
+        tmp = output_dir+r'\cifar_100_{}_images_{}\image{}'.format(kind,label,image_name)
+        print(tmp)
         plt.savefig(tmp, bbox_inches='tight', pad_inches=0)
         plt.close()
 
 
+
 def save_to_csv(cifar100Dict, output_dir_path, output_file_dir,kind):
+    print("save_to_csv")
     for i in cifar100Dict.keys():
         d = {1: 10, 2: 11, 17: 12}
         label = d[i]
@@ -89,9 +89,9 @@ def save_cifar100_to_csv(label, image_dir, output_file):
 
 
 def cifar100_f():
-    cifr100_file_path=r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100\cifar-100-python'
-    output_file_dir=r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100'
-    output_dir_path=r'C:\bootCamp\APPLIED\AppliedProject\preprocess\data\cifr100'
+    cifr100_file_path=r'\data\cifar_100\cifar-100-python'
+    output_file_dir=r'\data\cifar_100'
+    output_dir_path=r'\data\cifar_100'
     cifar100_dict_train=save_cifar100in_dict(cifr100_file_path,"train")
     save_the_pictures(cifar100_dict_train,output_dir_path,"train")
     save_to_csv(cifar100_dict_train,output_dir_path,output_file_dir,"train")
