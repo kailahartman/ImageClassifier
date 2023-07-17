@@ -23,9 +23,7 @@ def save_cifar100in_dict(cifr100_file_path,kind):
         num=data[b'coarse_labels'][i]
         if(num==2 or num==1 or num==17):
             new_dict[num].append(data[b'data'][i])
-    return  new_dict
-
-
+    return new_dict
 
 def save_the_pictures(cifar100Dict,output_dir_path,kind):
     for i in cifar100Dict.keys():
