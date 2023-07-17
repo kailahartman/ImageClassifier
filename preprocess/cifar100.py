@@ -11,7 +11,6 @@ def readCifar(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-#dfifgdk
 def save_cifar100_to_csv(label, image_dir, output_file):
     labels = []
     for i in range(2500):
@@ -65,7 +64,7 @@ for i in new_dict.keys():
 
 output_dir = os.getcwd()+r'\\data'
 for i in new_dict.keys():
-    d={1:9,2:10,17:11}
+    d={1:10,2:11,17:12}
     label= d[i]
     image_dir = os.getcwd()+r'\\data\\cifar100_class_'+str(i)
     output_file = os.path.join(output_dir, f'cifar100_class_{i}.csv')
