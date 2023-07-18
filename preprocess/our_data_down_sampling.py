@@ -32,6 +32,7 @@ folder_save_path = os.getcwd()+r"\\data\\our data\\our data"
 
 num_classes = 10
 num_samples = 5
+
 labels = create_labels(num_classes, num_samples)
 images = create_images(folder_load_path)
 
