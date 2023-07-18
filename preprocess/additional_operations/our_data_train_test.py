@@ -17,6 +17,7 @@ def save_as_numpy_file(output_file, data,name):
     cifar_dict = {name: data}
     np.savez(output_file, **cifar_dict)
 
+
 def save_numpy_file(parent_dir,images,labels):
     X_train, X_test, y_train, y_test = division(images, labels)
     l = [X_train, X_test, y_train, y_test]
