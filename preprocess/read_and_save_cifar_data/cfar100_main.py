@@ -1,9 +1,9 @@
 import numpy as np
 import os
-from preprocess.read_and_save_data.read_data import read_data
-from preprocess.read_and_save_data.save_as_images_locally import save_image_local
-from preprocess.read_and_save_data.save_to_numpy_file import save_as_numpy_file
-from preprocess.read_and_save_data.write_to_csv import save_cifar_to_csv
+from preprocess.read_and_save_cifar_data.read_data import read_data
+from preprocess.read_and_save_cifar_data.save_as_images_locally import save_image_local
+from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
+from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
 
 def cfar100_read_save_locally_numpy_csv():
     file = os.getcwd()+r'\\data\\cifar-100-python\train'
@@ -22,19 +22,12 @@ def cfar100_read_save_locally_numpy_csv():
     save_as_numpy_file(output_file,list_lable,list_data)
 
     images = np.reshape(list_data, (len(list_data), 3, 32, 32))
-    output_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
+    image_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
     image_format = 'png'
 
-    # save_image_local(images, output_dir, image_format,list_lable)
-
-    csv_output_dir = os.getcwd()+r'\\data'
-    image_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
-    output_file = os.path.join(csv_output_dir, f'cifar100.csv')
-
-    # save_cifar100_to_csv(list_lable, image_dir, output_file)
+    save_image_local(images, image_dir, image_format,list_lable)
 
     image_dir_cifar100 = os.path.join(os.getcwd(), "data", "output_images_from_cifar100")
     output_file_cifar100 = os.path.join(os.getcwd(), "data", "cifar100.csv")
-    labels_cifar100 = [101, 102, 103, 104, 105]  # Replace with your CIFAR-100 labels
 
-    save_cifar_to_csv(list_lable, image_dir_cifar100, output_file_cifar100, "cifar100")
+    save_cifar_to_csv(image_dir_cifar100, output_file_cifar100, "cifar100")
