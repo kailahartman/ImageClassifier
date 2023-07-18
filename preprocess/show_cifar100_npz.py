@@ -2,7 +2,6 @@ import numpy as np
 import os
 
 #
-
 def read_cifar10_from_numpy_dict(file_path):
     cifar_data = np.load(file_path, allow_pickle=True)
     images = cifar_data['images']
