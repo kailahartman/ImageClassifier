@@ -2,6 +2,7 @@ import pickle
 import numpy as np
 import os
 
+
 def save_cifar10_as_numpy_dict(data_dir, output_file):
     train_data, train_labels = [], []
     with open(data_dir, 'rb') as f:
