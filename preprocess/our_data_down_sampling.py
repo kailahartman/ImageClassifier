@@ -28,7 +28,7 @@ def create_images(folder_load_path):
     return images
 
 folder_load_path = os.getcwd()+r"\\data\\our data\\our_data_umge from _google" # change to your path
-folder_save_path = os.getcwd()+r"\\data\\our data"
+folder_save_path = os.getcwd()+r"\\data\\our data\\our data"
 
 num_classes = 10
 num_samples = 5
