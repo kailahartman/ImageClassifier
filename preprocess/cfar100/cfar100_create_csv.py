@@ -1,9 +1,6 @@
 import os
 import csv
-def save_cifar100_to_csv(label, image_dir, output_file):
-    labels = []
-    for i in range(2500):
-        labels.append(label)
+def save_cifar100_to_csv(labels, image_dir, output_file):
     paths = []
 
     for file_name in os.listdir(image_dir):

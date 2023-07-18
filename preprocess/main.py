@@ -7,7 +7,7 @@ from preprocess.our_data.our_data_down_sampling import downsampling
 from preprocess.our_data.our_data_save_as_numpy import save_as_numpy
 # from preprocess.additional_operations.normalization import normalization
 
-#cfar10_read_save_locally_numpy_csv()
+# cfar10_read_save_locally_numpy_csv()
 cfar100_read_save_locally_numpy_csv()
 #
 # create()
