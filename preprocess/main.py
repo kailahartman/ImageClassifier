@@ -1,7 +1,5 @@
-from preprocess.cfar10.cfar10_save_numpy_file import save_to_numpy_file
-from normalization import standardize_data
-import numpy as np
-#reads the data
-save_to_numpy_file()
-data = np.load("data/cifar10.npy")
-scaled_data = standardize_data(data)
+from cfar10.cfar10_main import cfar10_read_save_locally_numpy_csv
+from cfar100.cfar100_main import cfar100_read_save_locally_numpy_csv
+
+cfar10_read_save_locally_numpy_csv()
+cfar100_read_save_locally_numpy_csv()

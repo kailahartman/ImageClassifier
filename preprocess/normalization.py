@@ -9,3 +9,5 @@ def standardize_data(data):
 
 
 
+data = np.load("data/cifar10.npy")
+scaled_data = standardize_data(data)
