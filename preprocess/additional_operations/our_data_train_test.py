@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
 import numpy as np
-from view.show_data import read_cifar10_from_numpy_dict
+from preprocess.view.show_data import read_cifar10_from_numpy_dict
 
 def division(images,labels):
     X = images
