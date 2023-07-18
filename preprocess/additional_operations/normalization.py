@@ -7,7 +7,7 @@ def standardize_data(data):
     scaled_data = scaler.fit_transform(flattened_data)
     return scaled_data
 
+
+
 data = np.load("data/cifar10.npy")
 scaled_data = standardize_data(data)
-print(scaled_data)
-
