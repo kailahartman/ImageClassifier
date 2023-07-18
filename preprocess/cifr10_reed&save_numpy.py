@@ -18,8 +18,8 @@ def save_cifar10_as_numpy_dict(data_dir, output_file):
     np.savez(output_file, **cifar_dict)
 
 
-path = os.getcwd()+r'\\data\\cifr10\\cifar-10-batches-py'  #your path
-output_file = os.getcwd() + r'\\data\\cifr10\\'
+path = os.getcwd()+r'\\data\\cifar_10\\cifar-10-batches-py'  #your path
+output_file = os.getcwd() + r'\\data\\cifar_10\\cifar10'
 save_cifar10_as_numpy_dict(path, output_file)
 
 
