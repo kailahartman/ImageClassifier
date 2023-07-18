@@ -13,6 +13,8 @@ def save_our_data_to_csv(image_dir, output_file):
         writer = csv.writer(csvfile)
         writer.writerow(['label', 'path', 'source'])
         writer.writerows(zip(labels, paths, ['our data'] * len(labels)))  # Write the data rows
+
+
 output_file_path = os.path.join(os.getcwd(), 'data', 'our_data.csv')
 image_dir = os.path.join(os.getcwd(), 'data', 'our_data_umge from _google')
 save_our_data_to_csv(image_dir, output_file_path)
