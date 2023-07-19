@@ -1,5 +1,6 @@
 import os
 import numpy as np
+
 def merge_npz_files ():
 
     x = np.load(os.getcwd() + r'\\data\\cfar10.npz')
@@ -8,3 +9,4 @@ def merge_npz_files ():
 
     merge = [*x, *y, *z]
     np.savez('data\merged_data.npz', merge)
+
