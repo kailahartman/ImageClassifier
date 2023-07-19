@@ -1,20 +1,18 @@
 
 from read_and_save_cifar_data.cfar10_main import cfar10_read_save_locally_numpy_csv
 from read_and_save_cifar_data.cfar100_main import cfar100_read_save_locally_numpy_csv
+from read_and_save_cifar_data.custom_images_main import custom_images_read_save_locally_numpy_csv
 
-from preprocess.our_data.our_data_creat_csv import create
-from preprocess.our_data.our_data_down_sampling import downsampling
-from preprocess.our_data.our_data_save_as_numpy import save_as_numpy
-
+from preprocess.additional_operations.combine_csv_files import combine_csv_files
 from preprocess.additional_operations.normalization import standardize_data
 
 
 cfar10_read_save_locally_numpy_csv()
 cfar100_read_save_locally_numpy_csv()
+custom_images_read_save_locally_numpy_csv()
 
-create()
-images = downsampling()
-save_as_numpy(images)
+
+combine_csv_files()
 standardize_data()
 #merge
 

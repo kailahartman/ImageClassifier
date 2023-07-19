@@ -8,6 +8,5 @@ def standardize_data(data):
     return scaled_data
 
 
-
 data = np.load("data/cifar10.npy")
 scaled_data = standardize_data(data)
