@@ -8,6 +8,6 @@ def standardize_data(data):
     return scaled_data
 
 
-
-data = np.load("data/cifar10.npy")
-scaled_data = standardize_data(data)
+def scale_images_numpy_array():
+    data = np.load("data/cifar10.npz", allow_pickle=True)
+    scaled_data = standardize_data(data['images'])
