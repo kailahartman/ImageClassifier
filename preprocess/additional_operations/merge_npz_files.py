@@ -37,4 +37,3 @@ def merge_npz_files():
     np.savez(os.path.join(os.getcwd(), 'data', 'merged_data.npz'), images=merged_images, labels=merged_labels)
 
 
-

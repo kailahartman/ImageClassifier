@@ -17,4 +17,3 @@ def combine_csv_files():
     combined_df = pd.concat(dfs)
     combined_df = combined_df.sample(frac=1).reset_index(drop=True)
     combined_df.to_csv(os.path.join(os.getcwd(), 'data', 'combined_data.csv'), index=False)
-
