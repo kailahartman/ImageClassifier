@@ -29,8 +29,8 @@ images, labels = read_from_numpy_dict(file_path)
 print("images:", len(images))
 print("labels:", len(labels))
 
-images = images[10:20]
-labels = labels[10:20]
+images = images[10:12]
+labels = labels[10:12]
 
 show_images_with_labels(images, labels)
 
