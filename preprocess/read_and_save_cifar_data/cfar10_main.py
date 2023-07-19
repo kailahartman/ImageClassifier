@@ -9,7 +9,6 @@ def cfar10_read_save_locally_numpy_csv():
     output_file = os.getcwd() + r'\\data\\cfar10'
     train_data, train_labels = [], []
     for i in range(1, 6):
-        print("dfdffgfgbhjm" +path)
         data_dict = read_data(path + str(i))
         train_data.append(data_dict[b'data'])
         train_labels.extend(data_dict[b'labels'])
