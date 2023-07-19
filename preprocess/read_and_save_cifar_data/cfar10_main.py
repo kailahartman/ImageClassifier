@@ -9,6 +9,7 @@ def cfar10_read_save_locally_numpy_csv():
     output_file = os.getcwd() + r'\\data\\cfar10'
     train_data, train_labels = [], []
     for i in range(1, 6):
+        print("dfdffgfgbhjm" +path)
         data_dict = read_data(path + str(i))
         train_data.append(data_dict[b'data'])
         train_labels.extend(data_dict[b'labels'])
@@ -20,7 +21,7 @@ def cfar10_read_save_locally_numpy_csv():
     train_data = np.vstack(train_data)
     images = np.reshape(train_data, (len(train_data), 3, 32, 32))
 
-    save_image_local(images, image_dir, image_format, train_labels)
+#    save_image_local(images, image_dir, image_format, train_labels)
 
     output_file_cifar10 = os.path.join(os.getcwd(), "data", "cifar10.csv")
     save_cifar_to_csv(image_dir, output_file_cifar10, "cifar10")
