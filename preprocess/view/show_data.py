@@ -29,9 +29,9 @@ images, labels = read_from_numpy_dict(file_path)
 print("images:", len(images))
 print("labels:", len(labels))
 
-# Select the first 20 items
-images = images[:20]
-labels = labels[:20]
+# Select 10 items
+images = images[10:20]
+labels = labels[10:20]
 
 show_images_with_labels(images, labels)
 
