@@ -28,7 +28,7 @@ def save_numpy_file(parent_dir,images,labels):
 
 
 parent_dir = os.path.dirname(os.getcwd())
-file_path = os.path.join(parent_dir, 'data\our data', 'our data.npz')
+file_path = os.path.join(parent_dir,"..", 'data', 'custom_data.npz')
 images, labels = read_cifar10_from_numpy_dict(file_path)
 save_numpy_file(parent_dir,images,labels)
 
