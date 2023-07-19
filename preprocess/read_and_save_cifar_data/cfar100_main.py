@@ -19,15 +19,18 @@ def cfar100_read_save_locally_numpy_csv():
         d = {1: 10, 2: 11, 17: 12}
         list_lable[i] = d[list_lable[i]]
 
-    save_as_numpy_file(output_file,list_lable,list_data)
 
     images = np.reshape(list_data, (len(list_data), 3, 32, 32))
-    image_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
-    image_format = 'png'
 
-    save_image_local(images, image_dir, image_format,list_lable)
+    save_as_numpy_file(output_file,list_lable,images)
+    #
+    # images = np.reshape(list_data, (len(list_data), 3, 32, 32))
+    # image_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
+    # image_format = 'png'
+    #
+    # save_image_local(images, image_dir, image_format,list_lable)
+    #
+    # image_dir_cifar100 = os.path.join(os.getcwd(), "data", "output_images_from_cifar100")
+    # output_file_cifar100 = os.path.join(os.getcwd(), "data", "cifar100.csv")
 
-    image_dir_cifar100 = os.path.join(os.getcwd(), "data", "output_images_from_cifar100")
-    output_file_cifar100 = os.path.join(os.getcwd(), "data", "cifar100.csv")
-
-    save_cifar_to_csv(image_dir_cifar100, output_file_cifar100, "cifar100")
+    # save_cifar_to_csv(image_dir_cifar100, output_file_cifar100, "cifar100")

@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
 import numpy as np
-from view.show_data import read_cifar10_from_numpy_dict
+from view.show_data import read_from_numpy_dict
 
 def division(images,labels):
     X = images
@@ -29,7 +29,7 @@ def save_numpy_file(parent_dir,images,labels):
 
 parent_dir = os.path.dirname(os.getcwd())
 file_path = os.path.join(parent_dir,"..", 'data', 'custom_data.npz')
-images, labels = read_cifar10_from_numpy_dict(file_path)
+images, labels = read_from_numpy_dict(file_path)
 save_numpy_file(parent_dir,images,labels)
 
 
