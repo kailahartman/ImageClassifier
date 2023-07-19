@@ -29,7 +29,6 @@ images, labels = read_from_numpy_dict(file_path)
 print("images:", len(images))
 print("labels:", len(labels))
 
-# Select 10 items
 images = images[10:20]
 labels = labels[10:20]
 
