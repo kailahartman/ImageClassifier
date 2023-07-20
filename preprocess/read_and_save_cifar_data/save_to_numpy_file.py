@@ -10,6 +10,5 @@ def save_as_numpy_file(output_file, labels, data):
         images.append(image)
     images = np.array(images)
     cifar_dict = {'images': images, 'labels': train_labels}
-    print("ooo", images[0].shape)
 
     np.savez(output_file, **cifar_dict)
