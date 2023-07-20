@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import matplotlib
-matplotlib.use('agg')  # or 'pdf'
+# matplotlib.use('agg')  # or 'pdf'
 import matplotlib.pyplot as plt
 
 def read_from_numpy_dict(file_path):
@@ -29,7 +29,7 @@ def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
 
 def show_data_main():
     print("show data------------------------------------------------------------:)")
-    file_path = os.path.join(os.getcwd(), 'data', 'cfar10.npz')
+    file_path = os.path.join(os.getcwd(), 'data', 'merged_data.npz')
     images, labels = read_from_numpy_dict(file_path)
     print(";;;;;;;;", images[0].shape)
     images = images[:10]
