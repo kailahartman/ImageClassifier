@@ -14,6 +14,8 @@ import os
 import numpy as np
 
 def merge_npz_files():
+    print("merging npz files")
+
     x = np.load(os.path.join(os.getcwd(), 'data', 'cfar10.npz'))
     y = np.load(os.path.join(os.getcwd(), 'data', 'cfar100.npz'))
     z = np.load(os.path.join(os.getcwd(), 'data', 'custom_data.npz'))  # Rename the name of your file

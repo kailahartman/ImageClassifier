@@ -1,12 +1,14 @@
 import numpy as np
 import os
-from read_and_save_cifar_data.read_data import read_data
-from read_and_save_cifar_data.save_as_images_locally import save_image_local
-from read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
-from read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
+from preprocess.read_and_save_cifar_data.read_data import read_data
+from preprocess.read_and_save_cifar_data.save_as_images_locally import save_image_local
+from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
+from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
 
 def cfar100_read_save_locally_numpy_csv():
+
     print("cifar100")
+
     file = os.getcwd()+r'\\data\\cifar-100-python\train'
     output_file = os.getcwd() + r'\\data\\cfar100'
     train_data = read_data(file)

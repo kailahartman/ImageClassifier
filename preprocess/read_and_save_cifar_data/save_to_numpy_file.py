@@ -1,6 +1,8 @@
 import numpy as np
 
 def save_as_numpy_file(output_file, labels, data):
+    print("saving the data to a numpy file")
+
     train_labels = np.array(labels)
     images = []
     for i in range(len(data)):

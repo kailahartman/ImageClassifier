@@ -8,6 +8,8 @@ def down_sampling(load_path):
     return resized_image
 
 def create_images(folder_load_path):
+    print("downsampling our data")
+
     images = []
     for file_name in os.listdir(folder_load_path):
         load_path = os.path.join(folder_load_path, file_name)
