@@ -11,6 +11,7 @@ def extract_label(string):
         return None
 
 def save_cifar_to_csv(image_dir, output_file, dataset_name):
+    print("writing the data to a csv file")
     paths = []
     labels = []
 
