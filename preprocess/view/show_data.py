@@ -1,5 +1,7 @@
 import numpy as np
 import os
+import matplotlib
+matplotlib.use('agg')  # or 'pdf'
 import matplotlib.pyplot as plt
 
 def read_from_numpy_dict(file_path):
