@@ -6,6 +6,7 @@ from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy
 from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
 def cfar10_read_save_locally_numpy_csv():
     print("cfar10_main------------------------------------------------------------:)")
+
     path = os.getcwd()+r'\\data\\cifar-10-batches-py\\data_batch_'
     output_file = os.getcwd() + r'\\data\\cfar10'
     train_data, train_labels = [], []

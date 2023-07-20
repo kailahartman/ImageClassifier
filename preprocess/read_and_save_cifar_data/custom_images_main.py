@@ -18,10 +18,10 @@ def custom_images_read_save_locally_numpy_csv():
     images = np.reshape(images, (len(images), 3, 32, 32))
 
     print("save_as_numpy_file")
+    print("tmp:::: ", images.shape)
     output_numpy_file = os.getcwd()+r'\\data\\custom_data'
     save_as_numpy_file(output_numpy_file,labels,images)
 
-    print("tmp: ", images.shape)
     print("save_image_local")
     save_image_local(images, output_path_downsamples_images, 'png', labels)
 
