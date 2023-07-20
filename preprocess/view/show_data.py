@@ -9,12 +9,12 @@ def read_from_numpy_dict(file_path):
     return images, labels
 
 
-def show_images_with_labels(images, labels, figsize=(500, 500), fontsize=10):
+def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
     num_images = len(images)
     fig, axs = plt.subplots(1, num_images, figsize=figsize)
 
     for i in range(num_images):
-        image = images[i].reshape(32, 32, 3)
+        image = images[i]
         label = labels[i]
 
         axs[i].imshow(image)
@@ -25,15 +25,12 @@ def show_images_with_labels(images, labels, figsize=(500, 500), fontsize=10):
     plt.show()
 
 def show_data_main():
+    print("show data------------------------------------------------------------:)")
     file_path = os.path.join(os.getcwd(), 'data', 'custom_data.npz')
     images, labels = read_from_numpy_dict(file_path)
-    print("images:", len(images))
-    print("labels:", len(labels))
 
-    images = images[10:12]
-    labels = labels[10:12]
+    images = images[:10]
+    labels = labels[:10]
 
-    print("2images", images)
-    print("2labels", labels)
     show_images_with_labels(images, labels)
 
