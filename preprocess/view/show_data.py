@@ -28,7 +28,7 @@ def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
 
 def show_data_main():
     print("show data------------------------------------------------------------:)")
-    file_path = os.path.join(os.getcwd(), 'data', 'custom_data.npz')
+    file_path = os.path.join(os.getcwd(), 'data', 'cfar10.npz')
     images, labels = read_from_numpy_dict(file_path)
 
     images = images[:10]
