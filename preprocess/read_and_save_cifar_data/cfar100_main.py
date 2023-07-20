@@ -25,7 +25,7 @@ def cfar100_read_save_locally_numpy_csv():
     image_dir = os.getcwd()+r'\\data\\output_images_from_cifar100'
     image_format = 'png'
 
-    save_image_local(images, image_dir, image_format,list_lable)
+    # save_image_local(images, image_dir, image_format,list_lable)
 
     image_dir_cifar100 = os.path.join(os.getcwd(), "data", "output_images_from_cifar100")
     output_file_cifar100 = os.path.join(os.getcwd(), "data", "cifar100.csv")

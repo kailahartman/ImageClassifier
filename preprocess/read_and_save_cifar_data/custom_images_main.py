@@ -13,9 +13,9 @@ def custom_images_read_save_locally_numpy_csv():
     images=create_images(input_path)
     labels=[i for i in range(1,num_of_classes+ 1) for _ in range(num_of_images_in_every_class)]
 
-    save_image_local(images, output_path_downsamples_images, 'png', labels)
+    # save_image_local(images, output_path_downsamples_images, 'png', labels)
     images = np.reshape(images, (len(images), 3, 32, 32))
-
+    #
     output_numpy_file=os.getcwd()+r'\\data\\custom_data'
     images = np.array(images)
     save_as_numpy_file(output_numpy_file,labels,images)
