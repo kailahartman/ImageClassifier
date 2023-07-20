@@ -2,9 +2,11 @@ import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
 import numpy as np
-from view.show_data import read_from_numpy_dict
+from preprocess.view.show_data import read_from_numpy_dict
 
 def division(images,labels):
+    print("dividing to train and test")
+
     X = images
     y = labels
     # Split the data into training and testing sets
@@ -19,6 +21,7 @@ def save_as_numpy_file(output_file, data,name):
 
 
 def save_numpy_file(parent_dir,images,labels):
+    print("saving the train and test to a numpy file")
     X_train, X_test, y_train, y_test = division(images, labels)
     l = [X_train, X_test, y_train, y_test]
     names = ['X_train', 'X_test', 'y_train', 'y_test']
@@ -33,7 +36,5 @@ def split_train_test():
     images, labels = read_from_numpy_dict(file_path)
     save_numpy_file(parent_dir,images,labels)
 
-
-# path_to_data = os.getcwd()+r'\\data'
 
 

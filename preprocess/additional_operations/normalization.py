@@ -9,5 +9,6 @@ def standardize_data(data):
 
 
 def scale_images_numpy_array():
+    print("normalizing the merged npz file")
     data = np.load("data/merged_data.npz", allow_pickle=True)
     scaled_data = standardize_data(data['images'])
