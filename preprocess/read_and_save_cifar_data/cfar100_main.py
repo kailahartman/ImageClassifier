@@ -6,7 +6,9 @@ from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy
 from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
 
 def cfar100_read_save_locally_numpy_csv():
-    print("cifar100:")
+
+    print("cifar100")
+
     file = os.getcwd()+r'\\data\\cifar-100-python\train'
     output_file = os.getcwd() + r'\\data\\cfar100'
     train_data = read_data(file)
