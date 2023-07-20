@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 def down_sampling(load_path):
-    image = Image.open(load_path).convert('RGB')  # Convert image to RGB mode
+    image = Image.open(load_path).convert('RGB')
     resized_image = image.resize((32, 32), Image.LANCZOS)
     return resized_image
 

@@ -15,6 +15,7 @@ def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
 
     for i in range(num_images):
         image = images[i]
+        image = np.transpose(image, (1, 2, 0))
         label = labels[i]
 
         axs[i].imshow(image)
@@ -28,7 +29,7 @@ def show_data_main():
     print("show data------------------------------------------------------------:)")
     file_path = os.path.join(os.getcwd(), 'data', 'custom_data.npz')
     images, labels = read_from_numpy_dict(file_path)
-
+    print(";;;;;;;;", images[0].shape)
     images = images[:10]
     labels = labels[:10]
 
