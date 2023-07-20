@@ -1,15 +1,3 @@
-# import os
-# import numpy as np
-#
-# def merge_npz_files ():
-#
-#     x = np.load(os.getcwd() + r'\\data\\cfar10.npz')
-#     y = np.load(os.getcwd() + r'\\data\\cfar100.npz')
-#     z = np.load(os.getcwd() + r'\\data\\custom_data.npz')  # rename the name of your file
-#
-#     merge = [*x, *y, *z]
-#     print(merge)
-#     np.savez('data\merged_data.npz', merge)
 import os
 import numpy as np
 
@@ -33,9 +21,14 @@ def merge_npz_files():
     print("y_images", y_images.shape)
     print("z_images", z_images.shape)
 
-    merged_images = np.vstack([x_images, y_images, z_images])
-    merged_labels = np.concatenate([x_labels, y_labels, z_labels])
+    # Combine the images and labels from all datasets
+    all_images = np.vstack([x_images, y_images, z_images])
+    all_labels = np.concatenate([x_labels, y_labels, z_labels])
 
-    np.savez(os.path.join(os.getcwd(), 'data', 'merged_data.npz'), images=merged_images, labels=merged_labels)
+    # Shuffle the data randomly
+    indices = np.random.permutation(all_images.shape[0])
+    shuffled_images = all_images[indices]
+    shuffled_labels = all_labels[indices]
 
+    np.savez(os.path.join(os.getcwd(), 'data', 'merged_data.npz'), images=shuffled_images, labels=shuffled_labels)
 

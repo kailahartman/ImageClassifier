@@ -9,8 +9,8 @@ from additional_operations.our_data_train_test import split_train_test
 from view.show_data import show_data_main
 
 
-# cfar10_read_save_locally_numpy_csv()
-# cfar100_read_save_locally_numpy_csv()
+cfar10_read_save_locally_numpy_csv()
+cfar100_read_save_locally_numpy_csv()
 custom_images_read_save_locally_numpy_csv()
 combine_csv_files()
 #
