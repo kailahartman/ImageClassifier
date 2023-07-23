@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
 import numpy as np
-from preprocess.view.show_data import read_from_numpy_dict
+from preprocess.visualize.show_data import read_from_numpy_dict
 
 def division(images,labels):
     print("dividing to train and test")

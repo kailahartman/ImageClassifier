@@ -5,7 +5,7 @@ import os
 def down_sampling(load_path):
     image = Image.open(load_path).convert('RGB')
     resized_image = image.resize((32, 32), Image.LANCZOS)
-    resized_image=np.transpose(resized_image, (2, 1, 0))
+    resized_image=np.transpose(resized_image, (2,0,1))
     return resized_image
 
 def create_images(folder_load_path):

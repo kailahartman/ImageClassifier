@@ -6,7 +6,7 @@ from additional_operations.merge_npz_files import merge_npz_files
 from additional_operations.combine_csv_files import combine_csv_files
 from additional_operations.normalization import scale_images_numpy_array
 from additional_operations.our_data_train_test import split_train_test
-from view.show_data import show_data_main
+from visualize.show_data import show_data_main
 
 
 cfar10_read_save_locally_numpy_csv()
