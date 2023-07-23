@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 
 def read_from_numpy_dict(file_path):
+    print("reading from npz file")
     cifar_data = np.load(file_path, allow_pickle=True)
     images = cifar_data['images']
     labels = cifar_data['labels']
@@ -10,6 +11,7 @@ def read_from_numpy_dict(file_path):
 
 
 def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
+    print("showing given images")
     num_images = len(images)
     fig, axs = plt.subplots(1, num_images, figsize=figsize)
 
@@ -27,9 +29,8 @@ def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
 
 def show_data_main():
     print("show data------------------------------------------------------------:)")
-    file_path = os.path.join(os.getcwd(), 'data', 'cfar10.npz')
+    file_path = os.path.join(os.getcwd(), 'data', 'custom_data.npz')
     images, labels = read_from_numpy_dict(file_path)
-    print(";;;;;;;;", images[0].shape)
     images = images[:10]
     labels = labels[:10]
 

@@ -17,15 +17,11 @@ def cfar10_read_save_locally_numpy_csv():
         train_labels.extend(data_dict[b'labels'])
     images = np.reshape(train_data, (len(train_data), 3, 32, 32))
 
-    print("save_as_numpy_file")
     save_as_numpy_file(output_file, train_labels, images)
 
-    print("tmp: ", images.shape)
-    print("save_image_local")
     image_dir = os.path.join(os.getcwd(), "data", "output_images_from_cifar10")
     save_image_local(images, image_dir, 'png', train_labels)
 
-    print("save_cifar_to_csv")
     output_file_cifar10 = os.path.join(os.getcwd(), "data", "cifar10.csv")
     save_cifar_to_csv(image_dir, output_file_cifar10, "cifar10")
 
