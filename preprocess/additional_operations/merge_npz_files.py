@@ -35,7 +35,6 @@ def merge_npz_files():
 
     merged_images = np.vstack([x_images, y_images, z_images])
     merged_labels = np.concatenate([x_labels, y_labels, z_labels])
-
     np.savez(os.path.join(os.getcwd(), 'data', 'merged_data.npz'), images=merged_images, labels=merged_labels)
 
 

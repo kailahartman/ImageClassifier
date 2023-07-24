@@ -18,5 +18,4 @@ from visualize.show_data import show_data_main
 #
 # split_train_test()
 # scale_images_numpy_array()
-
 show_data_main()

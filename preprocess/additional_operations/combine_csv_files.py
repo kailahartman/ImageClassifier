@@ -4,7 +4,6 @@ import pandas as pd
 import codecs
 def combine_csv_files():
     print("combining the csv files")
-
     file_list = glob.glob(os.path.join(os.getcwd(), 'data', '*.csv'))
 
     dfs = []

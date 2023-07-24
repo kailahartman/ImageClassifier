@@ -10,7 +10,6 @@ def cfar100_read_save_locally_numpy_csv():
 
     chosen_label_list = [1, 2, 17]
     convert_label_dict = {1: 10, 2: 11, 17: 12}
-
     file_pickle_train = os.getcwd()+r'\\data\\cifar-100-python\train'
     file_pickle_test = os.getcwd()+r'\\data\\cifar-100-python\test'
     output_file_npz = os.getcwd() + r'\\data\\cfar100'
