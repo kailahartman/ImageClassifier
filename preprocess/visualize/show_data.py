@@ -9,7 +9,6 @@ def read_from_numpy_dict(file_path):
     labels = cifar_data['labels']
     return images, labels
 
-
 def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
     print("showing given images")
     num_images = len(images)
