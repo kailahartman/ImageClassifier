@@ -1,9 +1,9 @@
 import numpy as np
 import os
-from preprocess.read_and_save_cifar_data.save_as_images_locally import save_image_local
-from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
-from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
-from preprocess.additional_operations.down_sampling import create_images
+from read_and_save_cifar_data.save_as_images_locally import save_image_local
+from read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
+from read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
+from additional_operations.down_sampling import create_images
 
 def custom_images_read_save_locally_numpy_csv():
     print("custom------------------------------------------------------------:)")
