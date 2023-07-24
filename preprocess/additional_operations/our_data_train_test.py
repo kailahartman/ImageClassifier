@@ -32,7 +32,7 @@ def save_numpy_file(parent_dir,images,labels):
 def split_train_test():
 
     parent_dir = os.path.dirname(os.getcwd())
-    file_path = os.path.join(os.getcwd(), 'data', 'merged_data.npz')
+    file_path = os.path.join(os.getcwd(), 'data', 'normalization.npz')
     images, labels = read_from_numpy_dict(file_path)
     save_numpy_file(parent_dir,images,labels)
 

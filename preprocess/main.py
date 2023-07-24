@@ -17,6 +17,7 @@ combine_csv_files()
 merge_npz_files()
 split_train_test()
 # scale_images_numpy_array()
+
 split_train_test()
 
 show_data_main()

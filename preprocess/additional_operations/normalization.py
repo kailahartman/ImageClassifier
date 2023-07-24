@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
+from read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
 def standardize_data(data):
     # Reshape the data array from 4 dimensions to 2 dimensions
     flattened_data = data.reshape(data.shape[0], -1)
