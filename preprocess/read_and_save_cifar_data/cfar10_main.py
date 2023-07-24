@@ -24,4 +24,3 @@ def cfar10_read_save_locally_numpy_csv():
 
     output_file_cifar10 = os.path.join(os.getcwd(), "data", "cifar10.csv")
     save_cifar_to_csv(image_dir, output_file_cifar10, "cifar10")
-

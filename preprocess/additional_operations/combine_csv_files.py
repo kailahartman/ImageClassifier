@@ -2,7 +2,6 @@ import os
 import glob
 import pandas as pd
 import codecs
-
 def combine_csv_files():
     print("combining the csv files")
 

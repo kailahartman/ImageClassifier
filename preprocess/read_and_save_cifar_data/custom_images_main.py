@@ -7,7 +7,6 @@ from additional_operations.down_sampling import create_images
 
 def custom_images_read_save_locally_numpy_csv():
     print("custom------------------------------------------------------------:)")
-
     input_path = os.path.join(os.getcwd() ,"data", "our_data_umge from _google")
     output_path_downsamples_images=os.path.join(os.getcwd(),"data", "custom_images_downsampled")
     num_of_classes=10
