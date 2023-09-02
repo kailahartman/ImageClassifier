@@ -8,10 +8,15 @@ from preprocess.additional_operations.down_sampling import create_images
 def custom_images_read_save_locally_numpy_csv():
     print("custom------------------------------------------------------------:)")
 
-    input_path = os.path.join(os.getcwd(), "data", "our_data_umge from _google")
-    output_path_downsamples_images=os.path.join(os.getcwd(), "data", "custom_images_downsampled")
-    num_of_classes = 10
-    num_of_images_in_every_class = 5
+    input_path = os.path.join(os.getcwd() ,"data", "our_data_umge from _google")
+    output_path_downsamples_images=os.path.join(os.getcwd(),"data", "custom_images_downsampled")
+    num_of_classes=10
+    num_of_images_in_every_class=5
+
+    labels=[i for i in range(0,num_of_classes) for _ in range(num_of_images_in_every_class)]
+    images=create_images(input_path)
+    # images = np.reshape(images, (len(images), 3, 32, 32))
+
 
     labels = [i for i in range(0, num_of_classes) for _ in range(num_of_images_in_every_class)]
     images = create_images(input_path)
