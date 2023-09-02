@@ -5,7 +5,6 @@ from preprocess.read_and_save_cifar_data.read_data import read_data
 from preprocess.read_and_save_cifar_data.save_as_images_locally import save_image_local
 from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
 from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
-from preprocess.additional_operations.image_rotation import rotate_image
 def cfar10_read_save_locally_numpy_csv():
     print("cfar10_main------------------------------------------------------------:)")
 
@@ -16,12 +15,7 @@ def cfar10_read_save_locally_numpy_csv():
         data_dict = read_data(path + str(i))
         for j in data_dict[b'data']:
             train_data.append(j)
-            rotated_image = rotate_image(j, 90)
-            # rotated_images.append(rotated_image)
-            train_data.append(rotated_image)
         train_labels.extend(data_dict[b'labels'])
-        train_labels.extend(data_dict[b'labels'])
-        print(train_labels)
     images = np.reshape(train_data, (len(train_data), 3, 32, 32))
 
     # print(rotated_images)
