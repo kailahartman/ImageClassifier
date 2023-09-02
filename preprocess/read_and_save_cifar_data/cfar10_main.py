@@ -11,23 +11,22 @@ def cfar10_read_save_locally_numpy_csv():
 
     path = os.getcwd()+r'\\data\\cifar-10-batches-py\\data_batch_'
     output_file = os.getcwd() + r'\\data\\cfar10'
-    train_data, train_labels, rotated_images = [], [],[]
+    train_data, train_labels, rotated_images = [], [], []
     for i in range(1, 6):
         data_dict = read_data(path + str(i))
         for j in data_dict[b'data']:
             train_data.append(j)
             rotated_image = rotate_image(j, 90)
-            rotated_images.append(rotated_image)
+            # rotated_images.append(rotated_image)
+            train_data.append(rotated_image)
         train_labels.extend(data_dict[b'labels'])
+        train_labels.extend(data_dict[b'labels'])
+        print(train_labels)
     images = np.reshape(train_data, (len(train_data), 3, 32, 32))
-    # images_to_df = np.reshape(images, (len(images), 3072))
-    # df = pd.DataFrame(images_to_df)
-    print(rotated_images)
-    # print("sdfghj", df.columns)
-    # rotated_images = rotate_half_of_CIFAR_10(df, train_labels)
+
     # print(rotated_images)
-    train_labels.append(train_labels)
-    train_data.append(rotated_images)
+    # train_labels.append(train_labels)
+    # train_data.append(rotated_images)
     save_as_numpy_file(output_file, train_labels, images)
 
     image_dir = os.path.join(os.getcwd(), "data", "output_images_from_cifar10")
