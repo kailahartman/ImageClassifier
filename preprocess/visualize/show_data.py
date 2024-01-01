@@ -8,7 +8,6 @@ def read_from_numpy_dict(file_path):
     labels = cifar_data['labels']
     return images, labels
 
-
 def show_images_with_labels(images, labels, figsize=(10, 5), fontsize=10):
     num_images = len(images)
     fig, axs = plt.subplots(1, num_images, figsize=figsize)

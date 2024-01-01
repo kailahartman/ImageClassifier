@@ -11,4 +11,3 @@ def save_image_local(images, output_dir, image_format, labels):
         image_name = r'image_{}_label_{}.{}'.format(j + 1, label, image_format)
         output_path = os.path.join(output_dir, image_name)
         matplotlib.image.imsave(output_path, image)
-

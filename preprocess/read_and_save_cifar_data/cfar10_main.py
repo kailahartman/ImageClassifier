@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 import os
-from preprocess.read_and_save_cifar_data.read_data import read_data
-from preprocess.read_and_save_cifar_data.save_as_images_locally import save_image_local
-from preprocess.read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
-from preprocess.read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
+from read_and_save_cifar_data.read_data import read_data
+from read_and_save_cifar_data.save_as_images_locally import save_image_local
+from read_and_save_cifar_data.save_to_numpy_file import save_as_numpy_file
+from read_and_save_cifar_data.write_to_csv import save_cifar_to_csv
 def cfar10_read_save_locally_numpy_csv():
     print("cfar10_main------------------------------------------------------------:)")
 
@@ -25,7 +25,5 @@ def cfar10_read_save_locally_numpy_csv():
 
     image_dir = os.path.join(os.getcwd(), "data", "output_images_from_cifar10")
     save_image_local(images, image_dir, 'png', train_labels)
-
     output_file_cifar10 = os.path.join(os.getcwd(), "data", "cifar10.csv")
     save_cifar_to_csv(image_dir, output_file_cifar10, "cifar10")
-

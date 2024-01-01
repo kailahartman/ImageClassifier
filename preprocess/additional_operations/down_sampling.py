@@ -8,8 +8,8 @@ def down_sampling(load_path):
     resized_image=np.transpose(resized_image, (2, 0, 1))
     return resized_image
 
-def extract_number(filename):
-    return int(''.join(filter(str.isdigit, filename)))
+# def extract_number(filename):
+#     return int(''.join(filter(str.isdigit, filename)))
 
 def create_images(folder_load_path):
     images = []
